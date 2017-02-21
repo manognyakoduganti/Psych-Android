@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+
+
+
+
+        <include layout="@layout/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:layout_marginRight="@android:dimen/app_icon_size"
+            android:layout_centerInParent="true"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textAlignment="viewEnd"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:textColor="#FFFFFF"
+            android:singleLine="true"
+
+            android:textSize="11dp"
+            android:text="Copyright \u00A9 Surinder | Chini | Meenakshi | Karsihma Inc."/>
+
+</RelativeLayout>
