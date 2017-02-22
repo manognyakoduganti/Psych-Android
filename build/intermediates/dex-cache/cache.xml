@@ -3,48 +3,21 @@
 
     <item
         is-multidex="true"
+        jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="eb15ced6e81e1f567f373584160f663393da364f">
+        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_93befe0ac3e31553e5a886e784183ca859f00609\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
         <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_64a2714255e15833820674178944cb45cb0edae6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\manog\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
-        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3_7447d8f7bdbf8011b32d280576bae2add5d71246\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\manog\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_f3c9418c1dc2862d310bd51e5b14918cf1879b18\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="756d64196d7a20332ae50889678be2165b0e9c21">
-        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_38dc4e2b34d985e11b67f9490c140e11db25f41e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="09553477a991248a5cfbeb5cdebc97a030ca96a9">
-        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_93befe0ac3e31553e5a886e784183ca859f00609\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,6 +48,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\manog\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3_7447d8f7bdbf8011b32d280576bae2add5d71246\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="true"
         optimize="true"
@@ -93,12 +75,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\manog\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_f3c9418c1dc2862d310bd51e5b14918cf1879b18\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
         <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.4.0_0d27da704c55b6e1ed88ef1dd802344dc34edcfe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="756d64196d7a20332ae50889678be2165b0e9c21">
+        <dex dex="D:\Psych_Android-master\Psych_Android-master\teenviolence\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_38dc4e2b34d985e11b67f9490c140e11db25f41e\classes.dex" />
     </item>
     <item
         is-multidex="true"

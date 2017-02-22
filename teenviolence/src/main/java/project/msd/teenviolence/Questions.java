@@ -399,8 +399,9 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                         createNewActivity(HomeScreen.class, "Thanks for playing\n" + ParameterFile.userName);
                     } else {
                         if ((ParameterFile.QuestionSession%2)!=0) {
-                            startNewActivity(Questions.class);
-                            ParameterFile.QuestionSession++;
+                            startNewActivity(Continue.class);
+                            //startNewActivity(Questions.class);
+
                         } else {
                             new FetchImageParameter().execute();
                             System.out.println("value of demoplayed " + demoPlayed);
