@@ -251,7 +251,8 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
         //new FetchImageParameter().execute();
         testSubjectResults.clear();
         testSubjectResults = new ArrayList<TestSubjectResults>();
-        ParameterFile.QuestionSession=1;
+        ParameterFile.QuestionSession++;
+        System.out.println("QS in play game "+ParameterFile.QuestionSession);
         Intent intent=new Intent(PlayGame.this,Questions.class);
         intent.putExtra("isQuestion",true);
         PlayGame.this.startActivity(intent);

@@ -64,7 +64,6 @@ public class PlayDemo extends Activity implements SurfaceHolder.Callback {
                     mVideoView.requestFocus();
                     mVideoView.start();
 
-
                 }
             });
         }

@@ -40,6 +40,7 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -133,8 +134,12 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
 
                 JSONObject object = BuildConnections.getJSOnObject(stream);
 
+                System.out.println("object heree build connection "+object);
+
                 JSONArray array = object.getJSONArray("results");
                 int length = array.length();
+                System.out.println("jsonarray length results "+length);
+
                 questionsArrayList = new ArrayList<QuestionDetails>();
 
                 for (int i = 0; i < length; i++) {
@@ -151,11 +156,15 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            ArrayList<QuestionDetails> fixedQuestions = new ArrayList<QuestionDetails>(questionsArrayList);
+            Collections.shuffle(fixedQuestions);
+            questionsArrayList = new ArrayList<QuestionDetails>(fixedQuestions.subList(0,5));
             return questionsArrayList;
         }
 
 
         protected void onPostExecute(ArrayList<QuestionDetails> questionsArrayList) {
+           System.out.println("size of questionarraylist in post execute "+questionsArrayList.size());
             displayQuestions(questionsArrayList);
             semaphore.release();
             displayButton();
@@ -202,11 +211,14 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     }
 
     public void displayQuestions(ArrayList<QuestionDetails> questionsArrayList) {
+        System.out.println("list sizeeeee " +questionsArrayList.size());
         layout.removeAllViews();
         int nbrOfQuestion = questionsArrayList.size();
         //edits = new SeekBar[nbrOfQuestion];
+        System.out.println("number of questions sizee "+nbrOfQuestion);
         edits = new View[nbrOfQuestion];
         questionsViews = new TextView[nbrOfQuestion];
+        System.out.println("question views sizee "+questionsViews.toString());
         LinearLayout lLayout = null;
         int count=112310;
         for (int i = 0; i < nbrOfQuestion; i++) {
@@ -383,16 +395,21 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 String val = jsonObject.getString("save");
                 if (val.equalsIgnoreCase("successful")) {
 
-                    if (ParameterFile.QuestionSession == 1) {
+                    if (ParameterFile.QuestionSession == 5) {
                         createNewActivity(HomeScreen.class, "Thanks for playing\n" + ParameterFile.userName);
                     } else {
-                        new FetchImageParameter().execute();
-                        System.out.println("value of demoplayed "+demoPlayed);
-                        if (demoPlayed) {
-                            startNewActivity(DemoColorActivity.class);
+                        if ((ParameterFile.QuestionSession%2)!=0) {
+                            startNewActivity(Questions.class);
+                            ParameterFile.QuestionSession++;
                         } else {
-                            System.out.println("in else playdemo false "+demoPlayed);
-                        startNewActivity(PlayGame.class);
+                            new FetchImageParameter().execute();
+                            System.out.println("value of demoplayed " + demoPlayed);
+                            if (demoPlayed) {
+                                startNewActivity(DemoColorActivity.class);
+                            } else {
+                                System.out.println("in else playdemo false " + demoPlayed);
+                                startNewActivity(PlayGame.class);
+                            }
                         }
                     }
                 } else
