@@ -395,24 +395,19 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 String val = jsonObject.getString("save");
                 if (val.equalsIgnoreCase("successful")) {
 
-                    if (ParameterFile.QuestionSession == 5) {
+                    if (ParameterFile.QuestionSession == 1) {
                         createNewActivity(HomeScreen.class, "Thanks for playing\n" + ParameterFile.userName);
                     } else {
-                        if ((ParameterFile.QuestionSession%2)!=0) {
-                            startNewActivity(Continue.class);
-                            //startNewActivity(Questions.class);
 
-                        } else {
                             new FetchImageParameter().execute();
                             System.out.println("value of demoplayed " + demoPlayed);
                             if (demoPlayed) {
                                 startNewActivity(DemoColorActivity.class);
                             } else {
                                 System.out.println("in else playdemo false " + demoPlayed);
-                                startNewActivity(PlayGame.class);
+                               // startNewActivity(PlayGame.class);
                             }
                         }
-                    }
                 } else
                     buildAlertDialog(jsonObject.getString("message" + "\nPlease try again."));
             } catch (JSONException e) {

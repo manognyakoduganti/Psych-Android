@@ -45,23 +45,23 @@
       <file leaf-file-name="Questions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Questions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="397" column="58" selection-start-line="397" selection-start-column="58" selection-end-line="397" selection-end-column="58" />
+            <state relative-caret-position="101">
+              <caret line="401" column="64" selection-start-line="401" selection-start-column="27" selection-end-line="401" selection-end-column="64" />
               <folding>
                 <element signature="e#5947#5964#0" expanded="true" />
-                <element signature="e#18101#18117#0" expanded="true" />
-                <element signature="e#18173#18181#0" expanded="true" />
-                <element signature="e#18302#18318#0" expanded="true" />
+                <element signature="e#17853#17869#0" expanded="true" />
+                <element signature="e#17925#17933#0" expanded="true" />
+                <element signature="e#18054#18070#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Continue.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Continue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Continue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+              <caret line="74" column="48" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemoColorActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DemoColorActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/DemoColorActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-714">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="185">
+              <caret line="150" column="64" selection-start-line="150" selection-start-column="56" selection-end-line="150" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -93,23 +93,9 @@
       <file leaf-file-name="HomeScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/HomeScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="83" column="41" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayDemo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1534#2102#0" expanded="true" />
-                <element signature="e#2101#2102#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -117,9 +103,12 @@
       <file leaf-file-name="PlayGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="253" column="40" selection-start-line="253" selection-start-column="40" selection-end-line="253" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="250" column="10" selection-start-line="250" selection-start-column="10" selection-end-line="250" selection-end-column="10" />
+              <folding>
+                <element signature="e#3404#3531#0" expanded="true" />
+                <element signature="e#3530#3531#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1807,12 +1796,12 @@
         <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Register.java" />
         <option value="$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/view/SurfaceHolder.class" />
         <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayDemo.java" />
-        <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayGame.java" />
         <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/HomeScreen.java" />
         <option value="$PROJECT_DIR$/teenviolence/src/main/res/layout/activity_continue_screen.xml" />
+        <option value="$PROJECT_DIR$/teenviolence/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayGame.java" />
         <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Questions.java" />
         <option value="$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Continue.java" />
-        <option value="$PROJECT_DIR$/teenviolence/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -2290,13 +2279,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12641816" sideWeight="0.5030349" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24600638" sideWeight="0.4969651" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42332268" sideWeight="0.4969651" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2311,7 +2300,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33207262" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5176849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11980831" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41853034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17549168" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2746,22 +2735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="253" column="40" selection-start-line="253" selection-start-column="40" selection-end-line="253" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/HomeScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/teenviolence/src/main/res/layout/activity_continue_screen.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -2771,27 +2744,6 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Continue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Questions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="397" column="58" selection-start-line="397" selection-start-column="58" selection-end-line="397" selection-end-column="58" />
-          <folding>
-            <element signature="e#5947#5964#0" expanded="true" />
-            <element signature="e#18101#18117#0" expanded="true" />
-            <element signature="e#18173#18181#0" expanded="true" />
-            <element signature="e#18302#18318#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teenviolence/src/main/AndroidManifest.xml">
@@ -2813,10 +2765,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/HomeScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/DemoColorActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="185">
+          <caret line="150" column="64" selection-start-line="150" selection-start-column="56" selection-end-line="150" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Questions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="401" column="64" selection-start-line="401" selection-start-column="27" selection-end-line="401" selection-end-column="64" />
+          <folding>
+            <element signature="e#5947#5964#0" expanded="true" />
+            <element signature="e#17853#17869#0" expanded="true" />
+            <element signature="e#17925#17933#0" expanded="true" />
+            <element signature="e#18054#18070#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/PlayGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="250" column="10" selection-start-line="250" selection-start-column="10" selection-end-line="250" selection-end-column="10" />
+          <folding>
+            <element signature="e#3404#3531#0" expanded="true" />
+            <element signature="e#3530#3531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teenviolence/src/main/java/project/msd/teenviolence/Continue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="74" column="48" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
           <folding />
         </state>
       </provider>
