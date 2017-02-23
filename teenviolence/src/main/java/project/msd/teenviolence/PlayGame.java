@@ -133,7 +133,12 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
                             testSubjectResults.get(nextCounter).backgroundColor = ParameterFile.positiveColor;
 
                         linearLayout.setBackgroundColor(Color.parseColor(testSubjectResults.get(nextCounter).backgroundColor));
-                    } else {
+                    } else if (testSubjectResults.get(nextCounter).isNeutral){
+                        if (testSubjectResults.get(nextCounter).backgroundColor.equalsIgnoreCase("#"))
+                            testSubjectResults.get(nextCounter).backgroundColor = ParameterFile.neutralColor;
+                        linearLayout.setBackgroundColor(Color.parseColor(testSubjectResults.get(nextCounter).backgroundColor));
+                    }
+                    else {
                         if (testSubjectResults.get(nextCounter).backgroundColor.equalsIgnoreCase("#"))
                             testSubjectResults.get(nextCounter).backgroundColor = ParameterFile.negativeColor;
                         linearLayout.setBackgroundColor(Color.parseColor(testSubjectResults.get(nextCounter).backgroundColor));

@@ -13,6 +13,7 @@ public class TestSubjectResults {
     public String imageURL="";
     public Bitmap image=null;
     public boolean isPositive=false;
+    public boolean isNeutral=false;
     public long responseTime=0;
     public long displayTime=0;
     public boolean correctness = false;

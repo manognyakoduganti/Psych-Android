@@ -30,6 +30,7 @@ public class Constant {
     public static String SESSION_ID = "sessionId";
     public static String POSITIVE_COLOR = "positiveColor";
     public static String NEGATIVE_COLOR = "negativeColor";
+    public static String NEUTRAL_COLOR = "neutralColor";
     public static String IMAGES = "images";
     public static String IMAGE_CATEGORY_ID = "imageCategoryId";
     public static String IMAGE_TYPE = "imageType";
@@ -39,6 +40,7 @@ public class Constant {
     public static String IMAGE_ID = "imageId";
     public static String POSITIVE = "Positive";
     public static String NEGATIVE = "Negative";
+    public static String NEUTRAL = "Neutral";
     public static String BACKGROUND_COLOR = "backGroundColor";
     public static String RESPONSE_TIME = "responseTime";
     public static String CORRECTNESS = "correctness";

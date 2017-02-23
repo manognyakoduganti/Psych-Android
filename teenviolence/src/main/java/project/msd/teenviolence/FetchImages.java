@@ -75,10 +75,14 @@ public class FetchImages implements Runnable {
                 if(this.imageType.equals(Constant.POSITIVE)){
                     temp.backgroundColor = ParameterFile.positiveColor;
                     temp.isPositive = true;
-                }else{
+                }else if(this.imageType.equals(Constant.NEGATIVE)){
                     temp.backgroundColor = ParameterFile.negativeColor;
                     temp.isPositive = false;
                 }
+                else {
+                    temp.backgroundColor = ParameterFile.neutralColor;
+                    temp.isNeutral = true;
+                };
                 temp.image = image;
                 temp.displayTime = this.displayTime;
                 temp.imageCategoryId= this.imageCategoryId;

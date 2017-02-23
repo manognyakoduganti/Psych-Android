@@ -156,9 +156,9 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            ArrayList<QuestionDetails> fixedQuestions = new ArrayList<QuestionDetails>(questionsArrayList);
-            Collections.shuffle(fixedQuestions);
-            questionsArrayList = new ArrayList<QuestionDetails>(fixedQuestions.subList(0,5));
+           // ArrayList<QuestionDetails> fixedQuestions = new ArrayList<QuestionDetails>(questionsArrayList);
+            //Collections.shuffle(fixedQuestions);
+            //questionsArrayList = new ArrayList<QuestionDetails>(fixedQuestions.subList(0,5));
             return questionsArrayList;
         }
 
@@ -378,6 +378,7 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 object = BuildConnections.getJSOnObject(stream);
                 ParameterFile.positiveColor = object.getString(Constant.POSITIVE_COLOR);
                 ParameterFile.negativeColor = object.getString(Constant.NEGATIVE_COLOR);
+                ParameterFile.neutralColor = object.getString(Constant.NEUTRAL_COLOR);
                 ParameterFile.sessionID = object.getLong(Constant.SESSION_ID);
             } catch (Exception e) {
                 e.printStackTrace();

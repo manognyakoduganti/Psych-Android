@@ -35,33 +35,6 @@ public class Continue extends AppCompatActivity implements View.OnClickListener{
   }
 
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
-*/
-   /* public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.help:
-                MenuPouplateItems.showHelp();
-                return true;
-            case R.id.logout:
-                MenuPouplateItems.logout();
-                return true;
-            case R.id.feedback:
-                MenuPouplateItems.showFeedback(textView.getText().toString());
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
-
-
-
     @Override
     public void onClick(View view) {
 

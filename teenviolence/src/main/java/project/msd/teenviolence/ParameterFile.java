@@ -9,6 +9,7 @@ public class ParameterFile implements java.io.Serializable {
     static long participantId=-1;
     static String positiveColor="#";
     static String negativeColor="#";
+    static String neutralColor="#";
     static boolean isGamePlayed=false;
     static int QuestionSession=0;
     static String userName="";
