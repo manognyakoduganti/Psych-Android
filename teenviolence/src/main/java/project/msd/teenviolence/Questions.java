@@ -392,14 +392,17 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
         protected void onPostExecute(JSONObject jsonObject) {
 
             try {
-
+System.out.println("json in questions "+jsonObject.toString());
                 String val = jsonObject.getString("save");
+                System.out.println("val json value in questions "+val);
                 if (val.equalsIgnoreCase("successful")) {
 
+
                     if (ParameterFile.QuestionSession == 1) {
+                        System.out.println("in questions if ");
                         createNewActivity(HomeScreen.class, "Thanks for playing\n" + ParameterFile.userName);
                     } else {
-
+System.out.println("in Questions else");
                             new FetchImageParameter().execute();
                             System.out.println("value of demoplayed " + demoPlayed);
                             if (demoPlayed) {

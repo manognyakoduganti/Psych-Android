@@ -17,22 +17,23 @@ import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DemoColorActivity extends Activity implements View.OnTouchListener,Runnable,GestureDetector.OnGestureListener, Animation.AnimationListener {
+public class DemoColorActivity extends Activity implements Runnable,GestureDetector.OnGestureListener, Animation.AnimationListener {
 
     TextView view;
     LinearLayout layout;
-    Thread thread=null;
+    Thread thread = null;
     private Animation animZoomIn = null;
     private Animation animZoomOut = null, animNormal = null;
-    GestureDetector detector=null;
-    boolean swipeDown=false,animStarted=false,swipeDone=false;
+    GestureDetector detector = null;
+    boolean swipeDown = false, animStarted = false, swipeDone = false;
 
 
-    private final GestureDetector gestureDetector;
+    //private final GestureDetector gestureDetector;
 
-    public DemoColorActivity (Context ctx){
+ /*   public DemoColorActivity(Context ctx) {
         gestureDetector = new GestureDetector(ctx, new GestureListener());
     }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return gestureDetector.onTouchEvent(event);
@@ -43,10 +44,10 @@ public class DemoColorActivity extends Activity implements View.OnTouchListener,
         private static final int SWIPE_THRESHOLD = 100;
         private static final int SWIPE_VELOCITY_THRESHOLD = 100;
 
-      /*  @Override
+      *//*  @Override
         public boolean onDown(MotionEvent e) {
             return true;
-        }*/
+        }*//*
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
@@ -60,19 +61,19 @@ public class DemoColorActivity extends Activity implements View.OnTouchListener,
                             layout.setBackgroundColor((Color.parseColor(ParameterFile.neutralColor)));
                             view.setText("Please swipe right if you see this color");
                             onSwipeRight();
-                        } /*else {
+                        } *//*else {
                             onSwipeLeft();
-                        }*/
+                        }*//*
                     }
                     result = true;
                 }
-             /*   else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+             *//*   else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffY > 0) {
                         onSwipeBottom();
                     } else {
                         onSwipeTop();
                     }
-                }*/
+                }*//*
                 result = true;
 
             } catch (Exception exception) {
@@ -80,9 +81,9 @@ public class DemoColorActivity extends Activity implements View.OnTouchListener,
             }
             return result;
         }
-    }
+    }*/
 
-    public void onSwipeRight() {
+   /* public void onSwipeRight() {
     }
 
     public void onSwipeLeft() {
@@ -92,7 +93,9 @@ public class DemoColorActivity extends Activity implements View.OnTouchListener,
     }
 
     public void onSwipeBottom() {
-    }
+    }*/
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
