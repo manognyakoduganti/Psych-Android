@@ -25,6 +25,9 @@ import java.util.concurrent.Semaphore;
  */
 public class PlayGame extends Activity implements GestureDetector.OnGestureListener, Animation.AnimationListener {
 
+    private static final int SWIPE_THRESHOLD = 100;
+    private static final int SWIPE_VELOCITY_THRESHOLD = 10;
+
     static int nextCounter = 0;
 
     static int totalCorrectResponse=0;
@@ -90,6 +93,7 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
         animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out_animation);
         animZoomIn.setAnimationListener(this);
         animZoomOut.setAnimationListener(this);
+        animFadeOut.setAnimationListener(this);
     }
 
 
@@ -227,8 +231,8 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
     }
 
     @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                           float velocityY) {
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+                           float distanceY) {
 
       //  checkForNextImage();
         return false;
@@ -263,6 +267,7 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
         testSubjectResults.clear();
         testSubjectResults = new ArrayList<TestSubjectResults>();
         //ParameterFile.QuestionSession=1;
+        System.out.println("testSubjectResults in play game"+testSubjectResults.size());
         System.out.println("QS in play game "+ParameterFile.QuestionSession);
         Intent intent=new Intent(PlayGame.this,Continue.class);
         intent.putExtra("isQuestion",true);
@@ -277,9 +282,11 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
     }
 
     @Override
-    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
-                            float distanceY) {
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                            float velocityY) {
 
+        float diffY = e2.getY() - e1.getY();
+        float diffX = e2.getX() - e1.getX();
 
         TestSubjectResults results = testSubjectResults.get(nextCounter-1);
 
@@ -287,56 +294,63 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
         double time=(System.currentTimeMillis()-startTime);
 
 
-        try{
-            if (e1.getY() - e2.getY() <- 10) {
-                fingerSwipedUp();
-                if((time)>results.displayTime && nextCounter>0 && ((nextCounter-1) < (testSubjectResults.size() - 1))){
-                    System.out.print("More than allocated time");
-                    unattemptedQuestions++;
-                    //semaphore.release();
-                    return false;
+        try {
+            if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+                if (diffY > 0) {
+                    fingerSwipeDown();
+                    if ((time) > results.displayTime && nextCounter > 0 && ((nextCounter - 1) < (testSubjectResults.size() - 1))) {
+                        System.out.print("More than allocated time");
+                        unattemptedQuestions++;
+                        //semaphore.release();
+
+                        return false;
+
+                    }
+
+                    results.correctness = results.isPositive == false ? true : false;
+
+                    //endTime = System.nanoTime();
+                    endTime = System.currentTimeMillis();
+                    results.responseTime = (endTime - startTime);
                 }
 
-                results.correctness = results.isPositive == true ? true : false;
-                //endTime = System.nanoTime();
-                results.isAttempted=true;
-                endTime = System.currentTimeMillis();
-                results.responseTime = (endTime - startTime);
+                else{
+                    fingerSwipedUp();
+                    if ((time) > results.displayTime && nextCounter > 0 && ((nextCounter - 1) < (testSubjectResults.size() - 1))) {
+                        System.out.print("More than allocated time");
+                        unattemptedQuestions++;
+                        //semaphore.release();
+                        return false;
+                    }
 
+                    results.correctness = results.isPositive == true ? true : false;
+                    //endTime = System.nanoTime();
+                    results.isAttempted = true;
+                    endTime = System.currentTimeMillis();
+                    results.responseTime = (endTime - startTime);
+                }
             }
-            if (e1.getY() - e2.getY() > 10) {
-                fingerSwipeDown();
-                if((time)>results.displayTime && nextCounter>0 && ((nextCounter-1) < (testSubjectResults.size() - 1))){
-                    System.out.print("More than allocated time");
-                    unattemptedQuestions++;
-                    //semaphore.release();
 
-                    return false;
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                    if (diffX > 0) {
+                        fingerSwipeRight();
+                        if ((time) > results.displayTime && nextCounter > 0 && ((nextCounter - 1) < (testSubjectResults.size() - 1))) {
+                            System.out.print("More than allocated time");
+                            unattemptedQuestions++;
+                            //semaphore.release();
 
+                            return false;
+
+                        }
+
+                        results.correctness = results.isNeutral == true ? true : false;
+
+                        //endTime = System.nanoTime();
+                        endTime = System.currentTimeMillis();
+                        results.responseTime = (endTime - startTime);
+                    }
                 }
-
-                results.correctness = results.isPositive == false ? true : false;
-
-                //endTime = System.nanoTime();
-                endTime = System.currentTimeMillis();
-                results.responseTime = (endTime - startTime);
-            }
-            if(e1.getX() - e2.getX() < 10){
-                fingerSwipeRight();
-                if((time)>results.displayTime && nextCounter>0 && ((nextCounter-1) < (testSubjectResults.size() - 1))){
-                    System.out.print("More than allocated time");
-                    unattemptedQuestions++;
-                    //semaphore.release();
-
-                    return false;
-
-                }
-
-                results.correctness = results.isNeutral == true ? true : false;
-
-                //endTime = System.nanoTime();
-                endTime = System.currentTimeMillis();
-                results.responseTime = (endTime - startTime);
             }
         }catch (Exception e){
             e.printStackTrace();
