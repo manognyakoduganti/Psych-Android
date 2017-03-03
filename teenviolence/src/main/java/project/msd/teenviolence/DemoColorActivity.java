@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,78 +24,11 @@ public class DemoColorActivity extends Activity implements Runnable,GestureDetec
     LinearLayout layout;
     Thread thread = null;
     private Animation animZoomIn = null;
-    private Animation animZoomOut = null, animNormal = null;
+    private Animation animZoomOut = null, animNormal = null, animFadeOut = null;
     GestureDetector detector = null;
-    boolean swipeDown = false, animStarted = false, swipeDone = false;
-
-
-    //private final GestureDetector gestureDetector;
-
- /*   public DemoColorActivity(Context ctx) {
-        gestureDetector = new GestureDetector(ctx, new GestureListener());
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        return gestureDetector.onTouchEvent(event);
-    }
-
-    private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
-
-        private static final int SWIPE_THRESHOLD = 100;
-        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
-
-      *//*  @Override
-        public boolean onDown(MotionEvent e) {
-            return true;
-        }*//*
-
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            boolean result = false;
-            try {
-                float diffY = e2.getY() - e1.getY();
-                float diffX = e2.getX() - e1.getX();
-                if (Math.abs(diffX) > Math.abs(diffY)) {
-                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-                        if (diffX > 0) {
-                            layout.setBackgroundColor((Color.parseColor(ParameterFile.neutralColor)));
-                            view.setText("Please swipe right if you see this color");
-                            onSwipeRight();
-                        } *//*else {
-                            onSwipeLeft();
-                        }*//*
-                    }
-                    result = true;
-                }
-             *//*   else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-                    if (diffY > 0) {
-                        onSwipeBottom();
-                    } else {
-                        onSwipeTop();
-                    }
-                }*//*
-                result = true;
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-            return result;
-        }
-    }*/
-
-   /* public void onSwipeRight() {
-    }
-
-    public void onSwipeLeft() {
-    }
-
-    public void onSwipeTop() {
-    }
-
-    public void onSwipeBottom() {
-    }*/
-
+    boolean swipeDown = false, animStarted = false, swipeDone = false,swipeRight = false;
+    private static final int SWIPE_THRESHOLD = 100;
+    private static final int SWIPE_VELOCITY_THRESHOLD = 10;
 
 
     @Override
@@ -125,8 +59,10 @@ public class DemoColorActivity extends Activity implements Runnable,GestureDetec
     public void loadAnimaions(){
         animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_zoom_hint_in);
         animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_zoom_hint_out);
+       // animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out_animation);
         animZoomIn.setAnimationListener(this);
         animZoomOut.setAnimationListener(this);
+        //animFadeOut.setAnimationListener(this);
     }
 
 
@@ -139,11 +75,15 @@ public class DemoColorActivity extends Activity implements Runnable,GestureDetec
     public void onAnimationEnd(Animation animation) {
         if(!swipeDone) {
             if (animStarted) {
+                System.out.println("in 1st if  dca class");
                 view.startAnimation(animZoomOut);
                 animStarted = false;
+                //swipeDown=false;
             } else {
-                view.startAnimation(animZoomIn);
-                animStarted=true;
+
+                    System.out.println("in 2nd else  dca class");
+                    view.startAnimation(animZoomIn);
+                    animStarted = true;
             }
         }else{
             createNewActivity();
@@ -174,30 +114,52 @@ public class DemoColorActivity extends Activity implements Runnable,GestureDetec
     }
 
     @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                           float velocityY) {
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+                           float distanceY) {
 
         //  checkForNextImage();
         return false;
     }
 
     @Override
-    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
-                            float distanceY) {
-        if (swipeDown && e1.getY() - e2.getY() > 10) {
-            swipeDone=true;
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                            float velocityY) {
+        float diffY = e2.getY() - e1.getY();
+        float diffX = e2.getX() - e1.getX();
+
+        System.out.println("in onscroll dca class");
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                if (swipeDown && swipeRight && diffX > 0) {
+                    System.out.println("swipe done true");
+                    swipeDone = true;
+                }
+            }
         }
 
-        if(!swipeDown && e1.getY() - e2.getY() <- 10 ){
-            swipeDown=true;
-            layout.setBackgroundColor((Color.parseColor(ParameterFile.negativeColor)));
-            view.setText("Please swipe up if you see this color");
+        if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+            if (diffY > 0) {
+                if (!swipeDown && !swipeRight) {
+                    //swipeDown=true;
+                    swipeRight = true;
+                    layout.setBackgroundColor((Color.parseColor(ParameterFile.negativeColor)));
+                    System.out.println(" in swipe up " + swipeDown + " " + swipeRight);
+                    view.setText("Please swipe up if you see this color");
 
+                }
+            } else {
+                if (!swipeDown && swipeRight) {
+                    swipeDown = true;
+                    System.out.println("swipedown and swipedone value in case 3 " + swipeDown + " " + swipeRight);
+                    layout.setBackgroundColor(Color.parseColor(ParameterFile.neutralColor));
+                    view.setText("Please swipe right if you see this color");
+
+                }
+
+            }
         }
-
-
-
-    return false;
+        return false;
 
     }
     @Override

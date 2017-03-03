@@ -46,7 +46,7 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
     static Thread thread=null;
     ProgressDialog dialog = null;
     private Animation animZoomIn = null;
-    private Animation animZoomOut = null, animNormal = null;
+    private Animation animZoomOut = null, animNormal = null, animFadeOut = null;
     LinearLayout linearLayout;
     final Semaphore semaphore=new Semaphore(0,true);
 
@@ -86,6 +86,8 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
         animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_zoom_in);
         animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_zoom_out);
         animNormal = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_normal);
+
+        animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out_animation);
         animZoomIn.setAnimationListener(this);
         animZoomOut.setAnimationListener(this);
     }
@@ -98,6 +100,10 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
 
     public void fingerSwipeDown() {
         view.startAnimation(animZoomOut);
+    }
+
+    public void fingerSwipeRight() {
+        view.startAnimation(animFadeOut);
     }
 
     public void startPlayingTheGame() {
@@ -314,7 +320,25 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
                 //endTime = System.nanoTime();
                 endTime = System.currentTimeMillis();
                 results.responseTime = (endTime - startTime);
-            }}catch (Exception e){
+            }
+            if(e1.getX() - e2.getX() < 10){
+                fingerSwipeRight();
+                if((time)>results.displayTime && nextCounter>0 && ((nextCounter-1) < (testSubjectResults.size() - 1))){
+                    System.out.print("More than allocated time");
+                    unattemptedQuestions++;
+                    //semaphore.release();
+
+                    return false;
+
+                }
+
+                results.correctness = results.isNeutral == true ? true : false;
+
+                //endTime = System.nanoTime();
+                endTime = System.currentTimeMillis();
+                results.responseTime = (endTime - startTime);
+            }
+        }catch (Exception e){
             e.printStackTrace();
         }
         results.isAttempted = true;
