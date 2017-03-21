@@ -99,11 +99,11 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
 
 
     public void fingerSwipedUp() {
-        view.startAnimation(animZoomIn);
+        view.startAnimation(animZoomOut);
     }
 
     public void fingerSwipeDown() {
-        view.startAnimation(animZoomOut);
+        view.startAnimation(animZoomIn);
     }
 
     public void fingerSwipeRight() {

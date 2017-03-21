@@ -6,8 +6,8 @@ package project.msd.teenviolence;
 
 public class Constant {
 
-    //static String SERVER_ADDRESS = "http://10.0.2.2:8080/Psych-1/";
-    static String SERVER_ADDRESS = "http://ec2-52-32-245-49.us-west-2.compute.amazonaws.com:8080/Psych-1/";
+    static String SERVER_ADDRESS = "http://10.0.2.2:8080/Psych-1/";
+//    static String SERVER_ADDRESS = "http://ec2-52-32-245-49.us-west-2.compute.amazonaws.com:8080/Psych-1/";
 
     public static String USERNAME = "userName";
     public static String PASSWORD = "password";

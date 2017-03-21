@@ -60,7 +60,9 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     Semaphore semaphore = new Semaphore(0, true);
     ProgressDialog progressDialog = null;
     boolean demoPlayed = true;
-    ArrayList<QuestionDetails> questionsArrayList  = null;
+    ArrayList<QuestionDetails> questionsArrayList = null;
+    ArrayList<QuestionDetails> questionsArrayListBeginning  = null;
+    ArrayList<QuestionDetails> questionsArrayListEnd  = null;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -141,6 +143,9 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 System.out.println("jsonarray length results "+length);
 
                 questionsArrayList = new ArrayList<QuestionDetails>();
+                questionsArrayListBeginning = new ArrayList<QuestionDetails>();
+                questionsArrayListEnd = new ArrayList<QuestionDetails>();
+
 
                 for (int i = 0; i < length; i++) {
 
@@ -150,7 +155,25 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                     questionDetails.setstartLabel(array.getJSONObject(i).getString("startLabel"));
                     questionDetails.setendLabel(array.getJSONObject(i).getString("endLabel"));
                     questionDetails.setquestionName(array.getJSONObject(i).getString("questionName"));
-                    questionsArrayList.add(questionDetails);
+                    questionDetails.setquestionLocation(array.getJSONObject(i).getString("questionLocation"));
+                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Question location: "+array.getJSONObject(i).getString("questionLocation"));
+                    System.out.println("Get question location : "+questionDetails.getquestionLocation());
+                    if (questionDetails.getquestionLocation().equals("Beginning"))
+                    {
+                        System.out.println("Inside beginning case");
+                        questionsArrayListBeginning.add(questionDetails);
+                    }
+                    else if (questionDetails.getquestionLocation().equals("End"))
+                    {
+                        System.out.println("Inside end case");
+                        questionsArrayListEnd.add(questionDetails);
+                    }
+                    else
+                    {
+                        System.out.println("Inside beginning and end case");
+                        questionsArrayListBeginning.add(questionDetails);
+                        questionsArrayListEnd.add(questionDetails);
+                    }
                 }
 
             } catch (Exception e) {
@@ -159,6 +182,17 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
            // ArrayList<QuestionDetails> fixedQuestions = new ArrayList<QuestionDetails>(questionsArrayList);
             //Collections.shuffle(fixedQuestions);
             //questionsArrayList = new ArrayList<QuestionDetails>(fixedQuestions.subList(0,5));
+            if (ParameterFile.QuestionSession == 0)
+            {
+                questionsArrayList = questionsArrayListBeginning;
+            }
+            else if (ParameterFile.QuestionSession == 1)
+            {
+                questionsArrayList = questionsArrayListEnd;
+            }
+            System.out.println("Size of questionArrayListBeginning: "+questionsArrayListBeginning.size());
+            System.out.println("Size of questionArrayListEnd: "+questionsArrayListEnd.size());
+            System.out.println("Size of questionArrayList : "+questionsArrayList.size());
             return questionsArrayList;
         }
 

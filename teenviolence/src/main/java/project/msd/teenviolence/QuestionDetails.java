@@ -11,6 +11,7 @@ public class QuestionDetails {
     String startLabel;
     String endLabel;
     String questionName;
+    String questionLocation;
 
     public String getresponseType() {
         return responseType;
@@ -41,6 +42,12 @@ public class QuestionDetails {
     }
     public void setquestionName(String questionName) {
         this.questionName = questionName;
+    }
+    public String getquestionLocation() {
+        return questionLocation;
+    }
+    public void setquestionLocation(String questionLocation) {
+        this.questionLocation = questionLocation;
     }
 
 
