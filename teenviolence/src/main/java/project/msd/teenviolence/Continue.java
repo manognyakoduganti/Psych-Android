@@ -39,11 +39,13 @@ public class Continue extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
 
         if (view.getId() == R.id.exitgame) {
+            ParameterFile.continueGame = false;
             ParameterFile.QuestionSession=1;
             Intent intent=new Intent(Continue.this,Questions.class);
             Continue.this.startActivity(intent);
         }
         if (view.getId() == R.id.continuegame) {
+            ParameterFile.continueGame = true;
            // ParameterFile.QuestionSession=0;
             new FetchImageParameter().execute();
             Intent intent=new Intent(Continue.this,DemoColorActivity.class);
