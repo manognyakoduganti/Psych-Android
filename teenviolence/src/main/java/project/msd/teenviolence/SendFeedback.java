@@ -29,10 +29,12 @@ public class SendFeedback extends AsyncTask<Void, Void, Void> {
     }
     public void getCorrect_IncorrectResponses(TestSubjectResults result){
         if(result.isAttempted){
-            if(result.correctness)
+            if(result.correctness) {
                 PlayGame.totalCorrectResponse++;
-           else
+            }
+           else {
                 PlayGame.totalwrongResponse++;
+            }
         }
     }
 

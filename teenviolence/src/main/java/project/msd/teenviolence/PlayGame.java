@@ -65,7 +65,14 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        initialiseValues();
+        if (ParameterFile.continueGame == false) {
+            initialiseValues();
+        }
+        else {
+            nextImageNeeded = false;
+            gameOver = false;
+            paintInPostExecuteNeeded = true;
+        }
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -257,7 +264,7 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
 
     public void buildReport(){
 
-        totalQuestions=testSubjectResults.size();
+        totalQuestions+=testSubjectResults.size();
         ParameterFile.isGamePlayed=true;
         Semaphore semaphore=new Semaphore(0,true);
         new SendFeedback(semaphore).execute();
@@ -307,7 +314,7 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
 
                     }
 
-                    results.correctness = results.isPositive == false ? true : false;
+                    results.correctness = results.isPositive == true ? true : false;
 
                     //endTime = System.nanoTime();
                     endTime = System.currentTimeMillis();
@@ -323,7 +330,7 @@ public class PlayGame extends Activity implements GestureDetector.OnGestureListe
                         return false;
                     }
 
-                    results.correctness = results.isPositive == true ? true : false;
+                    results.correctness = results.isPositive == false ? true : false;
                     //endTime = System.nanoTime();
                     results.isAttempted = true;
                     endTime = System.currentTimeMillis();

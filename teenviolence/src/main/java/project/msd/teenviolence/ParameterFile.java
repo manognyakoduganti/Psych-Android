@@ -16,5 +16,6 @@ public class ParameterFile implements java.io.Serializable {
     static long tgId=0; // Target Group ID
     static long userID=0;
     static long sessionID=0;
+    static boolean continueGame = false;
 
 }
