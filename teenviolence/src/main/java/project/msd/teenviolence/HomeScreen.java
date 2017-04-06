@@ -17,7 +17,7 @@ import java.util.concurrent.Semaphore;
 public class HomeScreen extends AppCompatActivity implements View.OnClickListener{
 
     TextView textView;
-    Button demo,instruction,game;
+    Button demo,instruction,game,notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,11 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         demo=(Button)findViewById(R.id.demo);
         instruction=(Button)findViewById(R.id.instructions);
         game=(Button)findViewById(R.id.playGame);
+        notification=(Button) findViewById(R.id.notification);
         demo.setOnClickListener(this);
         instruction.setOnClickListener(this);
         game.setOnClickListener(this);
+        notification.setOnClickListener(this);
         MenuPouplateItems.questions = this;
 
 

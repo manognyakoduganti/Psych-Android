@@ -5,10 +5,11 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private PendingIntent pendingIntent;
 
@@ -22,8 +23,8 @@ public class MainActivity extends Activity {
 
 // we can set time by open date and time picker dialog
 
-        calendar.set(Calendar.HOUR_OF_DAY, 21);
-        calendar.set(Calendar.MINUTE, 31);
+        calendar.set(Calendar.HOUR_OF_DAY, 18);
+        calendar.set(Calendar.MINUTE, 07);
         calendar.set(Calendar.SECOND, 0);
 
         Intent intent1 = new Intent(MainActivity.this, MyReceiver.class);
