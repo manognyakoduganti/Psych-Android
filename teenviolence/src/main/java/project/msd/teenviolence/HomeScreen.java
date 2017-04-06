@@ -86,6 +86,12 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
             intent.putExtra("demoNeeded",false);
             HomeScreen.this.startActivity(intent);
         }
+
+        if (view.getId() == R.id.notification) {
+            Intent intent=new Intent(HomeScreen.this,MainActivity.class);
+            intent.putExtra("demoNeeded",false);
+            HomeScreen.this.startActivity(intent);
+        }
     }
 
     public void onBackPressed() {
