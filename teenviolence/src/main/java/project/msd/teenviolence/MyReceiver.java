@@ -36,7 +36,7 @@ public class MyReceiver extends BroadcastReceiver {
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(
                 context).setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Alaram Fired")
-                .setContentText("Events To be PErformed").setSound(alarmSound)
+                .setContentText("Events To be Performed").setSound(alarmSound)
                 .setAutoCancel(true).setWhen(when)
                 .setContentIntent(pendingIntent)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
