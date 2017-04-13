@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -18,18 +21,56 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     TextView textView, selectedTime;
     Button setTime;
+    Button buttonCancelAlarm;
     int gSelectedHour, gSelectedMinute;
+    Switch switchbutton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         textView = (TextView) findViewById(R.id.usernameValue);
+        setTime = (Button) findViewById(R.id.setTime);
+        selectedTime = (TextView) findViewById(R.id.selectedTime);
+
+        switchbutton = (Switch) findViewById(R.id.notificationSwitch);
+        switchbutton.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+            @Override
+            public void onCheckedChanged(CompoundButton cb, boolean bchecked){
+
+                if(bchecked){
+                    setTime.setEnabled(true);
+                    selectedTime.setText("");
+                }
+
+                else{
+                   setTime.setEnabled(false);
+                    cancelAlarm();
+                    selectedTime.setText(
+                            "\n\n***\n"
+                                    + "Alarm Cancelled! \n"
+                                    + "***\n");
+                }
+            }
+        });
+
+        if(switchbutton.isChecked()){
+            setTime.setEnabled(true);
+            selectedTime.setText("");
+        }
+        else{
+            setTime.setEnabled(false);
+            selectedTime.setText(
+                    "\n\n***\n"
+                            + "Alarm Cancelled! \n"
+                            + "***\n");
+        }
+
         Intent intent = getIntent();
         String text = intent.getStringExtra("text");
         textView.setText(text);
-        selectedTime = (TextView) findViewById(R.id.selectedTime);
-        setTime = (Button) findViewById(R.id.setTime);
+
         setTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 //        setAlarm(gSelectedHour, gSelectedMinute);
+
     }
 
     public void setAlarm(int hour, int minute){
@@ -81,5 +123,17 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("in main activity, after calling set repeating");
 
     } // end onCreate
+
+    private void cancelAlarm(){
+
+        Intent intent1 = new Intent(MainActivity.this, MyReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                MainActivity.this, 0, intent1,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
+
+    }
+
 
 }

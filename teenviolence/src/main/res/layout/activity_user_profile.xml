@@ -55,15 +55,6 @@
         android:layout_alignBottom="@+id/spinner2"
         android:layout_alignStart="@+id/targetGroup" />
 
-    <Switch
-        android:text="Notifications "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/notificationSwitch"
-        android:layout_above="@+id/spinner2"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginBottom="18dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,5 +109,14 @@
         android:layout_toEndOf="@+id/usernameValue"
         android:layout_marginBottom="14dp"
         android:id="@+id/selectedTime" />
+
+    <Switch
+        android:text="Notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notificationSwitch"
+        android:layout_below="@+id/targetGroup"
+        android:layout_alignStart="@+id/setTime"
+        android:layout_marginTop="53dp" />
 
 </RelativeLayout>
