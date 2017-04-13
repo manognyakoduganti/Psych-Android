@@ -34,6 +34,7 @@ public class MyAlarmService extends Service
     @Override
     public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
+        System.out.println("inside myalarm service");
         mManager = (NotificationManager) this.getApplicationContext().getSystemService(this.getApplicationContext().NOTIFICATION_SERVICE);
         Intent intent1 = new Intent(this.getApplicationContext(), MainActivity.class);
         intent1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -71,7 +72,12 @@ public class MyAlarmService extends Service
 //                .setLargeIcon(aBitmap)
 //                .build();
 
+//        return START_STICKY;
+    }
 
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        super.onTaskRemoved(rootIntent);
     }
 
     @Override

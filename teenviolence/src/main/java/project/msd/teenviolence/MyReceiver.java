@@ -20,6 +20,7 @@ public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO Auto-generated method stub
 
+        System.out.println("beginning of receiver");
         long when = System.currentTimeMillis();
         NotificationManager notificationManager = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
@@ -40,6 +41,7 @@ public class MyReceiver extends BroadcastReceiver {
                 .setAutoCancel(true).setWhen(when)
                 .setContentIntent(pendingIntent)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
+        System.out.println("end of receiver");
         notificationManager.notify(MID, mNotifyBuilder.build());
         MID++;
 
