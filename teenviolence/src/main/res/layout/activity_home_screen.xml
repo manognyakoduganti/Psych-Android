@@ -77,6 +77,22 @@
             android:id="@+id/playGame"
             />
 
+        <Button
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/button"
+            android:text="Profile"
+
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/notification"
+            />
+
 
 </LinearLayout>
 

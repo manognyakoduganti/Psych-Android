@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="project.msd.teenviolence.MainActivity">
+
+    <TextView
+        android:text="Username:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/username" />
+
+    <TextView
+        android:text="First Name:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_alignStart="@+id/username"
+        android:layout_marginTop="38dp"
+        android:id="@+id/firstName" />
+
+    <TextView
+        android:text="Last Name:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstName"
+        android:layout_alignStart="@+id/firstName"
+        android:layout_marginTop="49dp"
+        android:id="@+id/textView3" />
+
+    <TextView
+        android:text="Target Group:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="41dp"
+        android:id="@+id/targetGroup" />
+
+    <TextView
+        android:text="Set Day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_alignBottom="@+id/spinner2"
+        android:layout_alignStart="@+id/targetGroup" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/usernameValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/firstName"
+        android:layout_toEndOf="@+id/notificationSwitch"
+        android:id="@+id/firstNameValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toEndOf="@+id/targetGroup"
+        android:layout_marginStart="26dp"
+        android:id="@+id/lastNameValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/targetGroup"
+        android:layout_alignStart="@+id/lastNameValue"
+        android:id="@+id/targetGroupValue" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner2"
+        android:layout_marginBottom="103dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/targetGroup"
+        android:layout_marginStart="29dp" />
+
+    <Button
+        android:text="Set Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/targetGroup"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/setTime" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/setTime"
+        android:layout_toEndOf="@+id/usernameValue"
+        android:layout_marginBottom="14dp"
+        android:id="@+id/selectedTime" />
+
+    <Switch
+        android:text="Notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notificationSwitch"
+        android:layout_below="@+id/targetGroup"
+        android:layout_alignStart="@+id/setTime"
+        android:layout_marginTop="53dp" />
+
+</RelativeLayout>
